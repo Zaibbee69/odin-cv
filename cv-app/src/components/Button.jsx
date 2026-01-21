@@ -1,5 +1,3 @@
-import "../styles/index.scss";
-
 function Button({ text, type }) {
   let bg;
   if (type === "default") {
@@ -14,7 +12,7 @@ function Button({ text, type }) {
         backgroundColor: bg,
         color: "white",
         padding: "12px 1.2rem",
-        borderRadius: "6px",
+        borderRadius: "4px",
         border: "none",
         marginLeft: "6px",
         cursor: "pointer",

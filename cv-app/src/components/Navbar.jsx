@@ -1,13 +1,12 @@
 import Button from "./Button";
-import "../styles/index.scss";
 
 function Navbar() {
   return (
     <div
       style={{
         display: "flex",
-        justifyContent: "space-around",
-        gap: "20px",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
       <nav>

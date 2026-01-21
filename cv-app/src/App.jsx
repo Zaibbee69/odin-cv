@@ -1,7 +1,13 @@
 import Navbar from "./components/Navbar.jsx";
+import Index from "./components/Index.jsx";
 
 function App() {
-  return <Navbar />;
+  return (
+    <>
+      <Navbar />
+      <Index />
+    </>
+  );
 }
 
 export default App;

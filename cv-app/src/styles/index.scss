@@ -1,15 +1,19 @@
 /* SCSS HEX */
 $space-indigo: #25283dff;
-$ocean-blue: #2e86abff;
+$periwinkle: #a594f9;
 $carmine: #ba1f33ff;
 $watermelon: #eb334eff;
 $alabaster-grey: #eaeaeaff;
 $bg: rgb(243, 241, 236);
 
+$latoFont: "Lato", sans-serif;
+$montserratFont: "Montserrat", sans-serif;
+
 body {
   margin: 0;
   padding: 0;
   background-color: $bg;
+  font-family: $latoFont;
 }
 
 %box-shadower-extender {
@@ -24,12 +28,17 @@ body {
   box-shadow: var(--shadow-elevation-medium);
 }
 
+%flexer-extender {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 nav {
   @extend %box-shadower-extender;
+  @extend %flexer-extender;
   background-color: white;
-  display: flex;
   justify-content: space-around;
-  align-items: center;
   height: 60px;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -39,8 +48,79 @@ nav {
 }
 
 button {
+  font-family: $montserratFont;
+  font-weight: 500;
   transition: 0.15s;
   &:hover {
     opacity: 0.9;
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 1rem;
+  gap: 10px;
+}
+
+aside {
+  @extend %box-shadower-extender;
+  @extend %flexer-extender;
+  background-color: white;
+  flex-direction: column;
+  border-radius: 6px;
+  border: 2px solid $alabaster-grey;
+
+  & > .personal-details-ctn {
+    padding: 20px;
+    & > h2 {
+      font-family: $montserratFont;
+      font-weight: 500;
+      font-size: 2rem;
+      color: $periwinkle;
+    }
+
+    & > div {
+      @extend %flexer-extender;
+      flex-direction: column;
+      gap: 20px;
+
+      & div {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+  }
+}
+
+label {
+  font-family: $montserratFont;
+  font-weight: 500;
+  color: $periwinkle;
+  font-size: 0.9rem;
+}
+
+input {
+  background-color: whitesmoke;
+  border: 2px solid $alabaster-grey;
+  padding: 12px;
+  border-radius: 6px;
+  width: 240px;
+  max-width: 240px;
+  transition: 0.15s;
+
+  &::placeholder {
+    font-family: $latoFont;
+  }
+
+  &:focus {
+    border: 2px solid $periwinkle;
+    outline: none;
+  }
+
+  &:invalid {
+    border: 2px solid $carmine;
   }
 }
