@@ -1,0 +1,46 @@
+/* SCSS HEX */
+$space-indigo: #25283dff;
+$ocean-blue: #2e86abff;
+$carmine: #ba1f33ff;
+$watermelon: #eb334eff;
+$alabaster-grey: #eaeaeaff;
+$bg: rgb(243, 241, 236);
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $bg;
+}
+
+%box-shadower-extender {
+  --shadow-color: 43deg 8% 51%;
+  --shadow-elevation-medium:
+    0.2px 0.3px 0.3px hsl(var(--shadow-color) / 0.64),
+    0.3px 0.5px 0.5px -1.1px hsl(var(--shadow-color) / 0.53),
+    0.9px 1.3px 1.3px -2.3px hsl(var(--shadow-color) / 0.41),
+    2.2px 3.3px 3.2px -3.4px hsl(var(--shadow-color) / 0.3),
+    4.7px 7.1px 7px -4.5px hsl(var(--shadow-color) / 0.18);
+
+  box-shadow: var(--shadow-elevation-medium);
+}
+
+nav {
+  @extend %box-shadower-extender;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  max-width: 800px;
+  width: 800px;
+  border: 2px solid $alabaster-grey;
+}
+
+button {
+  transition: 0.15s;
+  &:hover {
+    opacity: 0.9;
+  }
+}
