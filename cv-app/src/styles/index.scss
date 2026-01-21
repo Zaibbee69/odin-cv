@@ -64,15 +64,19 @@ main {
 }
 
 aside {
-  @extend %box-shadower-extender;
   @extend %flexer-extender;
-  background-color: white;
   flex-direction: column;
-  border-radius: 6px;
-  border: 2px solid $alabaster-grey;
+  gap: 20px;
 
-  & > .personal-details-ctn {
-    padding: 20px;
+  & > .personal-details-ctn,
+  .education-ctn,
+  .experience-ctn {
+    @extend %box-shadower-extender;
+    background-color: white;
+    border-radius: 6px;
+    border: 2px solid $alabaster-grey;
+    padding: 30px;
+
     & > h2 {
       font-family: $montserratFont;
       font-weight: 500;
