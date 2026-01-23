@@ -128,3 +128,93 @@ input {
     border: 2px solid $carmine;
   }
 }
+
+.cv-ctn {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr;
+  @extend %box-shadower-extender;
+  background-color: white;
+  border-radius: 4px;
+
+  & > .cv-header-ctn {
+    flex: 1;
+    background-color: $space-indigo;
+    @extend %flexer-extender;
+    flex-direction: column;
+    color: white;
+
+    & div {
+      @extend %flexer-extender;
+      gap: 20px;
+
+      & > h1 {
+        font-size: 32px;
+        font-family: $montserratFont;
+        margin-bottom: 0;
+      }
+
+      &:nth-child(1) {
+        flex-direction: column;
+        gap: 6px;
+      }
+    }
+  }
+
+  & > .cv-body-ctn {
+    @extend %flexer-extender;
+    flex-direction: column;
+    gap: 8px;
+
+    & > .cv-body-element {
+      @extend %flexer-extender;
+      flex-direction: column;
+      padding: 12px;
+    }
+  }
+}
+
+.cv-element-header-ctn {
+  @extend %flexer-extender;
+  background-color: $alabaster-grey;
+  width: 80%;
+  max-width: 80%;
+  border-radius: 4px;
+  & > h2 {
+    color: $space-indigo;
+    font-size: medium;
+    font-family: $montserratFont;
+  }
+}
+
+.cv-element-body-ctn {
+  @extend %flexer-extender;
+  gap: 12px;
+
+  & > .cv-element-date-ctn {
+    @extend %flexer-extender;
+    flex-direction: column;
+
+    & > p {
+      padding: 6px;
+      margin: 0;
+    }
+  }
+
+  & > .cv-element-body {
+    @extend %flexer-extender;
+    flex-direction: column;
+
+    & > h2 {
+      color: $space-indigo;
+      font-family: $montserratFont;
+      font-size: 1.2rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    & > p {
+      padding: 6px;
+    }
+  }
+}
