@@ -1,15 +1,8 @@
 function Button({ text, type }) {
-  let bg;
-  if (type === "default") {
-    bg = "#eb334eff";
-  } else if (type === "target") {
-    bg = "black";
-  }
-
   return (
     <button
       style={{
-        backgroundColor: bg,
+        backgroundColor: type === "default" ? "#eb334eff" : "black",
         color: "white",
         padding: "12px 1.2rem",
         borderRadius: "4px",

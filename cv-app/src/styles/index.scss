@@ -218,3 +218,19 @@ input {
     }
   }
 }
+
+.card-btn-ctn {
+  @extend %flexer-extender;
+  margin-top: 64px;
+  margin-bottom: 64px;
+
+  & > button {
+    background-color: $periwinkle;
+    color: white;
+    padding: 12px 1.2rem;
+    border-radius: 4px;
+    border: none;
+    margin-left: 6px;
+    cursor: pointer;
+  }
+}
