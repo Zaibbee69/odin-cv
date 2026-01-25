@@ -1,4 +1,10 @@
-export default function CVBody({ date, location, institute, degree }) {
+export default function CVBody({
+  date,
+  location,
+  institute,
+  degree,
+  description,
+}) {
   return (
     <div className="cv-element-body-ctn">
       <div className="cv-element-date-ctn">
@@ -8,6 +14,7 @@ export default function CVBody({ date, location, institute, degree }) {
       <div className="cv-element-body">
         <h2>{institute}</h2>
         <p>{degree}</p>
+        <p>{description}</p>
       </div>
     </div>
   );

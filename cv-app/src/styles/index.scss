@@ -45,6 +45,15 @@ nav {
   max-width: 800px;
   width: 800px;
   border: 2px solid $alabaster-grey;
+
+  & > div > h2 {
+    font-family: $montserratFont;
+    color: $carmine;
+
+    & > span {
+      color: $watermelon;
+    }
+  }
 }
 
 button {
@@ -136,6 +145,8 @@ input {
   @extend %box-shadower-extender;
   background-color: white;
   border-radius: 4px;
+  padding-bottom: 40px;
+  border: 2px solid $alabaster-grey;
 
   & > .cv-header-ctn {
     flex: 1;
@@ -180,6 +191,7 @@ input {
   width: 80%;
   max-width: 80%;
   border-radius: 4px;
+  margin-top: 60px;
   & > h2 {
     color: $space-indigo;
     font-size: medium;
@@ -215,6 +227,7 @@ input {
 
     & > p {
       padding: 6px;
+      max-width: 400px;
     }
   }
 }

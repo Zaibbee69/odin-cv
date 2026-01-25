@@ -3,7 +3,7 @@ function Button({ text, type, handleDummyData }) {
     <button
       onClick={handleDummyData}
       style={{
-        backgroundColor: type === "default" ? "#eb334eff" : "black",
+        backgroundColor: type === "default" ? "#eb334eff" : "#eb334eff",
         color: "white",
         padding: "12px 1.2rem",
         borderRadius: "4px",

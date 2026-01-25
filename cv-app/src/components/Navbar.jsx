@@ -11,8 +11,9 @@ function Navbar({ handleDummyData }) {
     >
       <nav>
         <div>
-          <Button text="Content" type="default" />
-          <Button text="Customize" type="default" />
+          <h2>
+            Resume<span>Kit.io</span>
+          </h2>
         </div>
         <div>
           <Button

@@ -33,14 +33,6 @@ export default function CV({ cvData }) {
             degree={cvData.education.degree}
           />
         </div>
-        <div className="cv-body-element">
-          <CVBody
-            date={cvData.education.startDate}
-            location={cvData.education.location}
-            institute={cvData.education.school}
-            degree={cvData.education.degree}
-          />
-        </div>
 
         <CVHeader text="Experience" />
         <div className="cv-body-element">
@@ -49,6 +41,7 @@ export default function CV({ cvData }) {
             location={cvData.experience.location}
             institute={cvData.experience.company}
             degree={cvData.experience.position}
+            description={cvData.experience.description}
           />
         </div>
       </div>
