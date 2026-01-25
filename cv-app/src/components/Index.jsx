@@ -1,13 +1,30 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CV from "./CV";
 import SideBar from "./SideBar";
 
-export default function Index() {
+export default function Index({ btnData }) {
   const [isActive, setIsActive] = useState("personal");
+
+  const [cvData, setCvData] = useState(btnData);
+
+  useEffect(() => {
+    setCvData(btnData);
+  }, [btnData]);
 
   function handleButton(e) {
     setIsActive(e.currentTarget.value);
   }
+
+  const handleChange = (section, field, value) => {
+    setCvData((prev) => ({
+      ...prev,
+      [section]: {
+        ...prev[section],
+        [field]: value,
+      },
+    }));
+  };
+
   return (
     <>
       <div className="card-btn-ctn">
@@ -26,8 +43,12 @@ export default function Index() {
           marginTop: "20px",
         }}
       >
-        <SideBar isActive={isActive} />
-        <CV />
+        <SideBar
+          isActive={isActive}
+          cvData={cvData}
+          handleChange={handleChange}
+        />
+        <CV cvData={cvData} />
       </main>
     </>
   );

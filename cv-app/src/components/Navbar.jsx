@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-function Navbar() {
+function Navbar({ handleDummyData }) {
   return (
     <div
       style={{
@@ -15,7 +15,11 @@ function Navbar() {
           <Button text="Customize" type="default" />
         </div>
         <div>
-          <Button text="Download" type="target" />
+          <Button
+            handleDummyData={handleDummyData}
+            text="Dummy Data"
+            type="target"
+          />
         </div>
       </nav>
     </div>

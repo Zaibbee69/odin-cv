@@ -6,7 +6,7 @@ import {
 } from "react-icons/md";
 import { FaBook, FaLandmark } from "react-icons/fa";
 
-export default function ExperienceCard() {
+export default function ExperienceCard({ cvData, handleChange }) {
   return (
     <section className="experience-ctn">
       <h2>
@@ -22,6 +22,10 @@ export default function ExperienceCard() {
             name="company"
             id="company"
             placeholder="Enter Company Name"
+            value={cvData.experience.company}
+            onChange={(e) =>
+              handleChange("experience", "company", e.target.value)
+            }
           />
         </div>
         <div>
@@ -33,27 +37,35 @@ export default function ExperienceCard() {
             name="position"
             id="position"
             placeholder="Enter Position Title"
+            value={cvData.experience.position}
+            onChange={(e) =>
+              handleChange("experience", "position", e.target.value)
+            }
           />
         </div>
         <div>
-          <label htmlFor="st-date">
+          <label htmlFor="startDate">
             <MdOutlineDateRange /> Start Date
           </label>
           <input
             type="date"
-            name="st-date"
-            id="st-date"
+            name="startDate"
+            id="startDate"
             placeholder="Enter Start Date"
+            value={cvData.experience.startDate}
+            onChange={(e) =>
+              handleChange("experience", "startDate", e.target.value)
+            }
           />
         </div>
         <div>
-          <label htmlFor="ed-date">
+          <label htmlFor="endDate">
             <MdOutlineDateRange /> End Date
           </label>
           <input
             type="date"
-            name="ed-date"
-            id="ed-date"
+            name="endDate"
+            id="endDate"
             placeholder="Enter End Date"
           />
         </div>
@@ -66,6 +78,10 @@ export default function ExperienceCard() {
             name="location"
             id="location"
             placeholder="City, Country"
+            value={cvData.experience.location}
+            onChange={(e) =>
+              handleChange("experience", "location", e.target.value)
+            }
           />
         </div>
         <div>
@@ -76,6 +92,10 @@ export default function ExperienceCard() {
             name="description"
             id="description"
             placeholder="Enter Description"
+            value={cvData.experience.description}
+            onChange={(e) =>
+              handleChange("experience", "description", e.target.value)
+            }
           ></textarea>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import { MdOutlineDateRange, MdOutlineLocationOn } from "react-icons/md";
 import { FaAddressBook, FaBook, FaSchool } from "react-icons/fa";
 
-export default function EducationCard() {
+export default function EducationCard({ cvData, handleChange }) {
   return (
     <section className="education-ctn">
       <h2>
@@ -17,6 +17,10 @@ export default function EducationCard() {
             name="degree"
             id="degree"
             placeholder="Enter Degree / Field Of Study"
+            value={cvData.education.degree}
+            onChange={(e) =>
+              handleChange("education", "degree", e.target.value)
+            }
           />
         </div>
         <div>
@@ -28,6 +32,10 @@ export default function EducationCard() {
             name="school"
             id="school"
             placeholder="Enter School / University"
+            value={cvData.education.school}
+            onChange={(e) =>
+              handleChange("education", "school", e.target.value)
+            }
           />
         </div>
         <div>
@@ -36,19 +44,23 @@ export default function EducationCard() {
           </label>
           <input
             type="date"
-            name="st-date"
-            id="st-date"
+            name="startDate"
+            id="startDate"
             placeholder="Enter Start Date"
+            value={cvData.education.startDate}
+            onChange={(e) =>
+              handleChange("education", "startDate", e.target.value)
+            }
           />
         </div>
         <div>
-          <label htmlFor="ed-date">
+          <label htmlFor="endDate">
             <MdOutlineDateRange /> End Date
           </label>
           <input
             type="date"
-            name="ed-date"
-            id="ed-date"
+            name="endDate"
+            id="endDate"
             placeholder="Enter End Date"
           />
         </div>
@@ -61,6 +73,10 @@ export default function EducationCard() {
             name="location"
             id="location"
             placeholder="City, Country"
+            value={cvData.education.location}
+            onChange={(e) =>
+              handleChange("education", "location", e.target.value)
+            }
           />
         </div>
       </div>

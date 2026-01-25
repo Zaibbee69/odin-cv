@@ -1,6 +1,7 @@
-function Button({ text, type }) {
+function Button({ text, type, handleDummyData }) {
   return (
     <button
+      onClick={handleDummyData}
       style={{
         backgroundColor: type === "default" ? "#eb334eff" : "black",
         color: "white",

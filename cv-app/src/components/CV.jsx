@@ -2,24 +2,24 @@ import { MdOutlineMail, MdPhone, MdOutlineLocationOn } from "react-icons/md";
 import CVHeader from "./CVHeader";
 import CVBody from "./CVBody";
 
-export default function CV() {
+export default function CV({ cvData }) {
   return (
     <section className="cv-ctn">
       <div className="cv-header-ctn">
         <div>
-          <h1>Jahan Zaib</h1>
-          <h3>Software Developer</h3>
+          <h1>{cvData.personal.fullname}</h1>
+          <h3>{cvData.personal.title}</h3>
         </div>
         <div>
           <p>
-            <MdOutlineMail /> zabiijaz1@gmail.com
+            <MdOutlineMail /> {cvData.personal.email}
           </p>
           <p>
-            <MdPhone /> 03035336569
+            <MdPhone /> {cvData.personal.phone}
           </p>
           <p>
             <MdOutlineLocationOn />
-            London, UK
+            {cvData.personal.address}
           </p>
         </div>
       </div>
@@ -27,36 +27,28 @@ export default function CV() {
         <CVHeader text="Education" />
         <div className="cv-body-element">
           <CVBody
-            date="08/2020 - present"
-            location="London Uk"
-            institute="London City University"
-            degree="Bachelors in Economics"
+            date={cvData.education.startDate}
+            location={cvData.education.location}
+            institute={cvData.education.school}
+            degree={cvData.education.degree}
           />
         </div>
         <div className="cv-body-element">
           <CVBody
-            date="08/2020 - present"
-            location="London Uk"
-            institute="London City University"
-            degree="Bachelors in Economics"
+            date={cvData.education.startDate}
+            location={cvData.education.location}
+            institute={cvData.education.school}
+            degree={cvData.education.degree}
           />
         </div>
 
-        <CVHeader text="Education" />
+        <CVHeader text="Experience" />
         <div className="cv-body-element">
           <CVBody
-            date="08/2020 - present"
-            location="London Uk"
-            institute="London City University"
-            degree="Bachelors in Economics"
-          />
-        </div>
-        <div className="cv-body-element">
-          <CVBody
-            date="08/2020 - present"
-            location="London Uk"
-            institute="London City University"
-            degree="Bachelors in Economics"
+            date={cvData.experience.startDate}
+            location={cvData.experience.location}
+            institute={cvData.experience.company}
+            degree={cvData.experience.position}
           />
         </div>
       </div>

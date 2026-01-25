@@ -7,7 +7,7 @@ import {
 import { FaAddressBook } from "react-icons/fa";
 import { FaPerson } from "react-icons/fa6";
 
-export default function PersonalCard() {
+export default function PersonalCard({ cvData, handleChange }) {
   return (
     <section className="personal-details-ctn">
       <h2>
@@ -23,6 +23,10 @@ export default function PersonalCard() {
             name="fullname"
             id="fullname"
             placeholder="Enter your title, first- and last name"
+            value={cvData.personal.fullname}
+            onChange={(e) =>
+              handleChange("personal", "fullname", e.target.value)
+            }
           />
         </div>
         <div>
@@ -34,6 +38,8 @@ export default function PersonalCard() {
             name="title"
             id="title"
             placeholder="Target position or current role"
+            value={cvData.personal.title}
+            onChange={(e) => handleChange("personal", "title", e.target.value)}
           />
         </div>
         <div>
@@ -45,13 +51,22 @@ export default function PersonalCard() {
             name="email"
             id="email"
             placeholder="Enter email"
+            value={cvData.personal.email}
+            onChange={(e) => handleChange("personal", "email", e.target.value)}
           />
         </div>
         <div>
           <label htmlFor="phone">
             <MdPhone /> Phone Number
           </label>
-          <input type="tel" name="phone" id="phone" placeholder="Enter phone" />
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            placeholder="Enter phone"
+            value={cvData.personal.phone}
+            onChange={(e) => handleChange("personal", "phone", e.target.value)}
+          />
         </div>
         <div>
           <label htmlFor="address">
@@ -62,6 +77,10 @@ export default function PersonalCard() {
             name="address"
             id="address"
             placeholder="City, Country"
+            value={cvData.personal.address}
+            onChange={(e) =>
+              handleChange("personal", "address", e.target.value)
+            }
           />
         </div>
       </div>
